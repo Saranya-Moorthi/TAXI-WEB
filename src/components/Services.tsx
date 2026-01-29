@@ -2,7 +2,7 @@ import { Plane, Users, Baby, Briefcase, Heart, Ship, ArrowRight } from "lucide-r
 import bgImage from "../assets/road.png";
 import Airport from "@/assets/Airport.png";
 import Group from "@/assets/group.png";
-import Babys from "@/assets/baby.png";
+import Babys from "@/assets/mother.png";
 import Corporate from "@/assets/corporate.png";
 import Wedding from "@/assets/wedding.png";
 import Cruise from "@/assets/cruise.png";
