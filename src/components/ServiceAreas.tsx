@@ -1,5 +1,6 @@
 import { MapPin, ArrowRight } from "lucide-react";
 import map from "../assets/map.png";
+import Mapbg from "@/assets/Mapbg.png"
 
 const ServiceAreas = () => {
   const areas = [
@@ -19,8 +20,15 @@ const ServiceAreas = () => {
   ];
 
   return (
-    <section id="areas" className="py-20 bg-muted">
-      <div className="container mx-auto px-4">
+    <section id="areas" className="py-20 bg-muted relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+              <img
+                src={Mapbg}
+                alt="Maxi Cab Melbourne"
+                className="w-full h-full object-cover opacity-50 "
+              />
+            </div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl md:text-6xl font-bold text-navy mb-4">
             OUR SERVICE AREAS IN MELBOURNE

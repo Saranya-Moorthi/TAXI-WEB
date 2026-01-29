@@ -12,6 +12,11 @@ import CorporateTransfers from "./pages/CorporateTransfers";
 import WeddingTransfers from "./pages/WeddingTransfers";
 import CruiseTransfers from "./pages/CruiseTransfers";
 import WheelchairTaxi from "./pages/WheelchairTaxi";
+import Fleetpage from "./pages/Fleetpage";
+import Servicepage from "./pages/Servicepage";
+import About from "./pages/About";
+import Contactpage from "./pages/Contactpage";
+import Tours from "./pages/Tourspage";
 
 const queryClient = new QueryClient();
 
@@ -30,7 +35,11 @@ const App = () => (
           <Route path="/services/wedding-transfers" element={<WeddingTransfers />} />
           <Route path="/services/cruise-transfers" element={<CruiseTransfers />} />
           <Route path="/services/wheelchair-taxi" element={<WheelchairTaxi />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/fleet" element={<Fleetpage />} />
+          <Route path="/areas" element={<Servicepage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contactpage />} />
+          <Route path="/tours" element={<Tours />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
