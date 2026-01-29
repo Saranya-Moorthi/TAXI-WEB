@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 40% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 15%;
+
+    /* Golden Yellow Primary */
+    --primary: 43 96% 56%;
+    --primary-foreground: 210 40% 15%;
+
+    /* Deep Navy Secondary */
+    --secondary: 205 55% 25%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 20% 45%;
+
+    /* Teal Accent */
+    --accent: 195 70% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 43 96% 56%;
+
+    --radius: 0.5rem;
+
+    /* Custom Colors */
+    --gold: 43 96% 56%;
+    --gold-dark: 43 96% 45%;
+    --navy: 205 55% 20%;
+    --navy-light: 205 55% 30%;
+    --teal: 195 70% 35%;
+    --teal-dark: 195 70% 25%;
+    --orange: 25 95% 53%;
+
+    /* Hero gradient */
+    --hero-gradient: linear-gradient(135deg, hsl(195 70% 35%) 0%, hsl(205 55% 25%) 50%, hsl(205 55% 20%) 100%);
+    
+    /* Shadows */
+    --shadow-card: 0 10px 40px -10px hsl(205 55% 20% / 0.3);
+    --shadow-button: 0 4px 14px hsl(43 96% 56% / 0.4);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 205 55% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 205 55% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 205 55% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 43 96% 56%;
+    --primary-foreground: 210 40% 15%;
+
+    --secondary: 205 55% 30%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 205 55% 20%;
+    --muted-foreground: 210 20% 70%;
+
+    --accent: 195 70% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 205 55% 25%;
+    --input: 205 55% 25%;
+    --ring: 43 96% 56%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer components {
+  .hero-section {
+    background: var(--hero-gradient);
+  }
+
+  .btn-gold {
+    @apply bg-primary text-primary-foreground font-bold px-8 py-4 rounded-full 
+           transition-all duration-300 hover:scale-105 shadow-lg;
+    box-shadow: var(--shadow-button);
+  }
+
+  .btn-gold:hover {
+    @apply bg-gold-dark;
+  }
+
+  .btn-outline-gold {
+    @apply border-2 border-primary text-primary font-bold px-8 py-4 rounded-full 
+           transition-all duration-300 hover:bg-primary hover:text-primary-foreground;
+  }
+
+  .card-white {
+    @apply bg-white rounded-2xl p-6 shadow-xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .badge-circle {
+    @apply w-24 h-24 rounded-full flex items-center justify-center text-center font-bold text-sm;
+  }
+
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+
+  .bg-gold {
+    background-color: hsl(var(--gold));
+  }
+
+  .bg-gold-dark {
+    background-color: hsl(var(--gold-dark));
+  }
+
+  .bg-navy {
+    background-color: hsl(var(--navy));
+  }
+
+  .bg-navy-light {
+    background-color: hsl(var(--navy-light));
+  }
+
+  .bg-teal {
+    background-color: hsl(var(--teal));
+  }
+
+  .text-navy {
+    color: hsl(var(--navy));
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--orange)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+}
